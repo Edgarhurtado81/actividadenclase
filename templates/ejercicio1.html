@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> EJERCICIO 1</h1>
+    <H2>LOS NUMEROS INGRESADOS DEBEN SER DIFERENTES</H2>
+    <form method="POST" action="/ejercicio1">
+        <label for="a">Número A:</label>
+        <input type="number" name="a" required>
+
+        <label for="b">Número B:</label>
+        <input type="number" name="b" required>
+
+        <label for="c">Número C:</label>
+        <input type="number" name="c" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if mayor is not none and menor is not none %}
+        <div class="result">
+            <h2>RESULTADO:</h2>
+            <p>El número mayor es: <strong>{{ mayor }}</strong></p>
+            <p>El número menor es: <strong>{{ menor }}</strong></p>
+        </div>
+    {% endif %}
+</body>
+</html>
